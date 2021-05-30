@@ -1,0 +1,419 @@
+2021-05-30 20:07:58,335 INFO     [mqttwarn.commands        ] Starting mqttwarn
+2021-05-30 20:07:58,335 INFO     [mqttwarn.commands        ] Log level is DEBUG
+2021-05-30 20:07:58,335 INFO     [mqttwarn.core            ] Successfully loaded service "telegram"
+2021-05-30 20:07:58,335 DEBUG    [mqttwarn.core            ] Attempting connection to MQTT broker localhost:1883...
+2021-05-30 20:07:58,335 DEBUG    [mqttwarn.core            ] Setting LWT to clients/mqttwarn...
+2021-05-30 20:07:58,336 INFO     [mqttwarn.core            ] Starting 1 worker threads
+2021-05-30 20:07:58,336 DEBUG    [mqttwarn.core            ] Job queue has 0 items to process
+2021-05-30 20:07:58,336 DEBUG    [mqttwarn.core            ] Connected to MQTT broker, subscribing to topics...
+2021-05-30 20:07:58,336 DEBUG    [mqttwarn.core            ] Cleansession==False; previous subscriptions for clientid mqttwarn remain active on broker
+2021-05-30 20:07:58,336 DEBUG    [mqttwarn.core            ] Subscribing to test/+ (qos=0)
+2021-05-30 20:08:10,307 DEBUG    [mqttwarn.core            ] Message received on test/1: hello
+2021-05-30 20:08:10,307 DEBUG    [mqttwarn.core            ] Section [test/+] matches message on test/1. Processing...
+2021-05-30 20:08:10,307 DEBUG    [mqttwarn.core            ] Cannot decode JSON object, payload=hello: Expecting value: line 1 column 1 (char 0)
+2021-05-30 20:08:10,307 DEBUG    [mqttwarn.core            ] Message on test/1 going to telegram:j01
+2021-05-30 20:08:10,307 DEBUG    [mqttwarn.core            ] New `telegram:j01' job: test/1
+2021-05-30 20:08:10,307 DEBUG    [mqttwarn.core            ] Processor #0 is handling: `telegram' for j01
+2021-05-30 20:08:10,308 INFO     [mqttwarn.core            ] Invoking service plugin for `telegram'
+2021-05-30 20:08:10,308 DEBUG    [mqttwarn.services.telegram] *** MODULE=/home/tandalos/.local/lib/python3.8/site-packages/mqttwarn/services/telegram.py: service=telegram, target=j01
+2021-05-30 20:08:10,308 DEBUG    [mqttwarn.services.telegram] Getting uid from /getUpdates...
+2021-05-30 20:08:10,308 DEBUG    [mqttwarn.services.telegram] https://api.telegram.org/bot1879441980:AAFBDDeehtkcE6VY8gI53o45o9A375SGq2Y/getUpdates
+2021-05-30 20:08:10,309 DEBUG    [urllib3.connectionpool   ] Starting new HTTPS connection (1): api.telegram.org:443
+2021-05-30 20:08:10,548 DEBUG    [urllib3.connectionpool   ] https://api.telegram.org:443 "GET /bot1879441980:AAFBDDeehtkcE6VY8gI53o45o9A375SGq2Y/getUpdates HTTP/1.1" 401 58
+2021-05-30 20:08:10,550 WARNING  [mqttwarn.services.telegram] {'ok': False, 'error_code': 401, 'description': 'Unauthorized'}
+2021-05-30 20:08:10,550 ERROR    [mqttwarn.services.telegram] Failed to send request to Telegram
+Traceback (most recent call last):
+  File "/home/tandalos/.local/lib/python3.8/site-packages/mqttwarn/services/telegram.py", line 115, in plugin
+    uid = tg.get_uid(tg_contact)
+  File "/home/tandalos/.local/lib/python3.8/site-packages/mqttwarn/services/telegram.py", line 78, in get_uid
+    for msg in updates["result"]:
+TypeError: 'bool' object is not subscriptable
+2021-05-30 20:08:10,550 WARNING  [mqttwarn.core            ] Notification of telegram for `test/1' FAILED or TIMED OUT
+2021-05-30 20:08:10,550 DEBUG    [mqttwarn.core            ] Job queue has 0 items to process
+2021-05-30 20:08:46,912 DEBUG    [mqttwarn.core            ] Disconnecting from MQTT broker...
+2021-05-30 20:08:46,912 INFO     [mqttwarn.core            ] Clean disconnection from broker
+2021-05-30 20:08:46,912 INFO     [mqttwarn.core            ] Waiting for queue to drain
+2021-05-30 20:08:46,912 DEBUG    [mqttwarn.core            ] Exiting on signal 2
+2021-05-30 20:08:47,996 INFO     [mqttwarn.commands        ] Starting mqttwarn
+2021-05-30 20:08:47,996 INFO     [mqttwarn.commands        ] Log level is DEBUG
+2021-05-30 20:08:47,996 INFO     [mqttwarn.core            ] Successfully loaded service "telegram"
+2021-05-30 20:08:47,996 DEBUG    [mqttwarn.core            ] Attempting connection to MQTT broker localhost:1883...
+2021-05-30 20:08:47,996 DEBUG    [mqttwarn.core            ] Setting LWT to clients/mqttwarn...
+2021-05-30 20:08:47,996 INFO     [mqttwarn.core            ] Starting 1 worker threads
+2021-05-30 20:08:47,997 DEBUG    [mqttwarn.core            ] Job queue has 0 items to process
+2021-05-30 20:08:47,997 DEBUG    [mqttwarn.core            ] Connected to MQTT broker, subscribing to topics...
+2021-05-30 20:08:47,997 DEBUG    [mqttwarn.core            ] Cleansession==False; previous subscriptions for clientid mqttwarn remain active on broker
+2021-05-30 20:08:47,997 DEBUG    [mqttwarn.core            ] Subscribing to test/+ (qos=0)
+2021-05-30 20:08:49,954 DEBUG    [mqttwarn.core            ] Message received on test/1: hello
+2021-05-30 20:08:49,954 DEBUG    [mqttwarn.core            ] Section [test/+] matches message on test/1. Processing...
+2021-05-30 20:08:49,954 DEBUG    [mqttwarn.core            ] Cannot decode JSON object, payload=hello: Expecting value: line 1 column 1 (char 0)
+2021-05-30 20:08:49,954 DEBUG    [mqttwarn.core            ] Message on test/1 going to telegram:j01
+2021-05-30 20:08:49,955 DEBUG    [mqttwarn.core            ] New `telegram:j01' job: test/1
+2021-05-30 20:08:49,955 DEBUG    [mqttwarn.core            ] Processor #0 is handling: `telegram' for j01
+2021-05-30 20:08:49,955 INFO     [mqttwarn.core            ] Invoking service plugin for `telegram'
+2021-05-30 20:08:49,955 DEBUG    [mqttwarn.services.telegram] *** MODULE=/home/tandalos/.local/lib/python3.8/site-packages/mqttwarn/services/telegram.py: service=telegram, target=j01
+2021-05-30 20:08:49,955 DEBUG    [mqttwarn.services.telegram] Getting uid from /getUpdates...
+2021-05-30 20:08:49,955 DEBUG    [mqttwarn.services.telegram] https://api.telegram.org/bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/getUpdates
+2021-05-30 20:08:49,956 DEBUG    [urllib3.connectionpool   ] Starting new HTTPS connection (1): api.telegram.org:443
+2021-05-30 20:08:50,270 DEBUG    [urllib3.connectionpool   ] https://api.telegram.org:443 "GET /bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/getUpdates HTTP/1.1" 200 1251
+2021-05-30 20:08:50,271 ERROR    [mqttwarn.services.telegram] Failed to send request to Telegram
+Traceback (most recent call last):
+  File "/home/tandalos/.local/lib/python3.8/site-packages/mqttwarn/services/telegram.py", line 115, in plugin
+    uid = tg.get_uid(tg_contact)
+  File "/home/tandalos/.local/lib/python3.8/site-packages/mqttwarn/services/telegram.py", line 79, in get_uid
+    chat = msg["message"]["chat"]
+KeyError: 'message'
+2021-05-30 20:08:50,274 WARNING  [mqttwarn.core            ] Notification of telegram for `test/1' FAILED or TIMED OUT
+2021-05-30 20:08:50,274 DEBUG    [mqttwarn.core            ] Job queue has 0 items to process
+2021-05-30 20:10:07,697 DEBUG    [mqttwarn.core            ] Message received on test/1: hello
+2021-05-30 20:10:07,698 DEBUG    [mqttwarn.core            ] Section [test/+] matches message on test/1. Processing...
+2021-05-30 20:10:07,698 DEBUG    [mqttwarn.core            ] Cannot decode JSON object, payload=hello: Expecting value: line 1 column 1 (char 0)
+2021-05-30 20:10:07,698 DEBUG    [mqttwarn.core            ] Message on test/1 going to telegram:j01
+2021-05-30 20:10:07,698 DEBUG    [mqttwarn.core            ] New `telegram:j01' job: test/1
+2021-05-30 20:10:07,698 DEBUG    [mqttwarn.core            ] Processor #0 is handling: `telegram' for j01
+2021-05-30 20:10:07,698 INFO     [mqttwarn.core            ] Invoking service plugin for `telegram'
+2021-05-30 20:10:07,698 DEBUG    [mqttwarn.services.telegram] *** MODULE=/home/tandalos/.local/lib/python3.8/site-packages/mqttwarn/services/telegram.py: service=telegram, target=j01
+2021-05-30 20:10:07,698 DEBUG    [mqttwarn.services.telegram] Getting uid from /getUpdates...
+2021-05-30 20:10:07,698 DEBUG    [mqttwarn.services.telegram] https://api.telegram.org/bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/getUpdates
+2021-05-30 20:10:07,699 DEBUG    [urllib3.connectionpool   ] Starting new HTTPS connection (1): api.telegram.org:443
+2021-05-30 20:10:07,937 DEBUG    [urllib3.connectionpool   ] https://api.telegram.org:443 "GET /bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/getUpdates HTTP/1.1" 200 1251
+2021-05-30 20:10:07,938 ERROR    [mqttwarn.services.telegram] Failed to send request to Telegram
+Traceback (most recent call last):
+  File "/home/tandalos/.local/lib/python3.8/site-packages/mqttwarn/services/telegram.py", line 115, in plugin
+    uid = tg.get_uid(tg_contact)
+  File "/home/tandalos/.local/lib/python3.8/site-packages/mqttwarn/services/telegram.py", line 79, in get_uid
+    chat = msg["message"]["chat"]
+KeyError: 'message'
+2021-05-30 20:10:07,938 WARNING  [mqttwarn.core            ] Notification of telegram for `test/1' FAILED or TIMED OUT
+2021-05-30 20:10:07,938 DEBUG    [mqttwarn.core            ] Job queue has 0 items to process
+2021-05-30 20:11:11,191 DEBUG    [mqttwarn.core            ] Disconnecting from MQTT broker...
+2021-05-30 20:11:11,192 INFO     [mqttwarn.core            ] Clean disconnection from broker
+2021-05-30 20:11:11,192 INFO     [mqttwarn.core            ] Waiting for queue to drain
+2021-05-30 20:11:11,192 DEBUG    [mqttwarn.core            ] Exiting on signal 2
+2021-05-30 20:11:12,356 INFO     [mqttwarn.commands        ] Starting mqttwarn
+2021-05-30 20:11:12,356 INFO     [mqttwarn.commands        ] Log level is DEBUG
+2021-05-30 20:11:12,357 INFO     [mqttwarn.core            ] Successfully loaded service "telegram"
+2021-05-30 20:11:12,357 DEBUG    [mqttwarn.core            ] Attempting connection to MQTT broker localhost:1883...
+2021-05-30 20:11:12,357 DEBUG    [mqttwarn.core            ] Setting LWT to clients/mqttwarn...
+2021-05-30 20:11:12,357 INFO     [mqttwarn.core            ] Starting 1 worker threads
+2021-05-30 20:11:12,357 DEBUG    [mqttwarn.core            ] Job queue has 0 items to process
+2021-05-30 20:11:12,358 DEBUG    [mqttwarn.core            ] Connected to MQTT broker, subscribing to topics...
+2021-05-30 20:11:12,358 DEBUG    [mqttwarn.core            ] Subscribing to test/+ (qos=0)
+2021-05-30 20:11:14,945 DEBUG    [mqttwarn.core            ] Message received on test/1: hello
+2021-05-30 20:11:14,945 DEBUG    [mqttwarn.core            ] Section [test/+] matches message on test/1. Processing...
+2021-05-30 20:11:14,945 DEBUG    [mqttwarn.core            ] Cannot decode JSON object, payload=hello: Expecting value: line 1 column 1 (char 0)
+2021-05-30 20:11:14,946 DEBUG    [mqttwarn.core            ] Message on test/1 going to telegram:j01
+2021-05-30 20:11:14,946 DEBUG    [mqttwarn.core            ] New `telegram:j01' job: test/1
+2021-05-30 20:11:14,946 DEBUG    [mqttwarn.core            ] Processor #0 is handling: `telegram' for j01
+2021-05-30 20:11:14,946 INFO     [mqttwarn.core            ] Invoking service plugin for `telegram'
+2021-05-30 20:11:14,946 DEBUG    [mqttwarn.services.telegram] *** MODULE=/home/tandalos/.local/lib/python3.8/site-packages/mqttwarn/services/telegram.py: service=telegram, target=j01
+2021-05-30 20:11:14,946 DEBUG    [mqttwarn.services.telegram] Getting uid from /getUpdates...
+2021-05-30 20:11:14,946 DEBUG    [mqttwarn.services.telegram] https://api.telegram.org/bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/getUpdates
+2021-05-30 20:11:14,948 DEBUG    [urllib3.connectionpool   ] Starting new HTTPS connection (1): api.telegram.org:443
+2021-05-30 20:11:15,186 DEBUG    [urllib3.connectionpool   ] https://api.telegram.org:443 "GET /bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/getUpdates HTTP/1.1" 200 1251
+2021-05-30 20:11:15,187 ERROR    [mqttwarn.services.telegram] Failed to send request to Telegram
+Traceback (most recent call last):
+  File "/home/tandalos/.local/lib/python3.8/site-packages/mqttwarn/services/telegram.py", line 115, in plugin
+    uid = tg.get_uid(tg_contact)
+  File "/home/tandalos/.local/lib/python3.8/site-packages/mqttwarn/services/telegram.py", line 79, in get_uid
+    chat = msg["message"]["chat"]
+KeyError: 'message'
+2021-05-30 20:11:15,187 WARNING  [mqttwarn.core            ] Notification of telegram for `test/1' FAILED or TIMED OUT
+2021-05-30 20:11:15,188 DEBUG    [mqttwarn.core            ] Job queue has 0 items to process
+2021-05-30 20:12:17,695 DEBUG    [mqttwarn.core            ] Disconnecting from MQTT broker...
+2021-05-30 20:12:17,695 INFO     [mqttwarn.core            ] Clean disconnection from broker
+2021-05-30 20:12:17,695 INFO     [mqttwarn.core            ] Waiting for queue to drain
+2021-05-30 20:12:17,695 DEBUG    [mqttwarn.core            ] Exiting on signal 2
+2021-05-30 20:12:18,731 INFO     [mqttwarn.commands        ] Starting mqttwarn
+2021-05-30 20:12:18,731 INFO     [mqttwarn.commands        ] Log level is DEBUG
+2021-05-30 20:12:18,731 INFO     [mqttwarn.core            ] Successfully loaded service "telegram"
+2021-05-30 20:12:18,731 DEBUG    [mqttwarn.core            ] Attempting connection to MQTT broker localhost:1883...
+2021-05-30 20:12:18,731 DEBUG    [mqttwarn.core            ] Setting LWT to clients/mqttwarn...
+2021-05-30 20:12:18,732 INFO     [mqttwarn.core            ] Starting 1 worker threads
+2021-05-30 20:12:18,732 DEBUG    [mqttwarn.core            ] Job queue has 0 items to process
+2021-05-30 20:12:18,732 DEBUG    [mqttwarn.core            ] Connected to MQTT broker, subscribing to topics...
+2021-05-30 20:12:18,732 DEBUG    [mqttwarn.core            ] Subscribing to test/+ (qos=0)
+2021-05-30 20:12:20,153 DEBUG    [mqttwarn.core            ] Message received on test/1: hello
+2021-05-30 20:12:20,153 DEBUG    [mqttwarn.core            ] Section [test/+] matches message on test/1. Processing...
+2021-05-30 20:12:20,153 DEBUG    [mqttwarn.core            ] Cannot decode JSON object, payload=hello: Expecting value: line 1 column 1 (char 0)
+2021-05-30 20:12:20,153 DEBUG    [mqttwarn.core            ] Message on test/1 going to telegram:j01
+2021-05-30 20:12:20,154 DEBUG    [mqttwarn.core            ] New `telegram:j01' job: test/1
+2021-05-30 20:12:20,154 DEBUG    [mqttwarn.core            ] Processor #0 is handling: `telegram' for j01
+2021-05-30 20:12:20,154 INFO     [mqttwarn.core            ] Invoking service plugin for `telegram'
+2021-05-30 20:12:20,154 DEBUG    [mqttwarn.services.telegram] *** MODULE=/home/tandalos/.local/lib/python3.8/site-packages/mqttwarn/services/telegram.py: service=telegram, target=j01
+2021-05-30 20:12:20,154 DEBUG    [mqttwarn.services.telegram] Setting chatid directly to '1577603920'
+2021-05-30 20:12:20,154 DEBUG    [mqttwarn.services.telegram] Trying to /sendMessage: https://api.telegram.org/bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage
+2021-05-30 20:12:20,154 DEBUG    [mqttwarn.services.telegram] post params: {'chat_id': 1577603920, 'text': 'hello', 'parse_mode': 'Markdown', 'disable_notification': False}
+2021-05-30 20:12:20,155 DEBUG    [urllib3.connectionpool   ] Starting new HTTPS connection (1): api.telegram.org:443
+2021-05-30 20:12:20,435 DEBUG    [urllib3.connectionpool   ] https://api.telegram.org:443 "POST /bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage?chat_id=1577603920&text=hello&parse_mode=Markdown&disable_notification=False HTTP/1.1" 200 267
+2021-05-30 20:12:20,436 DEBUG    [mqttwarn.services.telegram] Telegram reply: {'ok': True, 'result': {'message_id': 5, 'from': {'id': 1848791128, 'is_bot': True, 'first_name': 'Tandalos', 'username': 'Tandalos_bot'}, 'chat': {'id': 1577603920, 'first_name': 'Tandalos', 'last_name': 'Dunno', 'username': 'tandalos', 'type': 'private'}, 'date': 1622394740, 'text': 'hello'}}
+2021-05-30 20:12:20,436 DEBUG    [mqttwarn.core            ] Job queue has 0 items to process
+2021-05-30 20:12:54,049 DEBUG    [mqttwarn.core            ] Message received on test/1: hello
+2021-05-30 20:12:54,049 DEBUG    [mqttwarn.core            ] Section [test/+] matches message on test/1. Processing...
+2021-05-30 20:12:54,049 DEBUG    [mqttwarn.core            ] Cannot decode JSON object, payload=hello: Expecting value: line 1 column 1 (char 0)
+2021-05-30 20:12:54,049 DEBUG    [mqttwarn.core            ] Message on test/1 going to telegram:j01
+2021-05-30 20:12:54,049 DEBUG    [mqttwarn.core            ] New `telegram:j01' job: test/1
+2021-05-30 20:12:54,050 DEBUG    [mqttwarn.core            ] Processor #0 is handling: `telegram' for j01
+2021-05-30 20:12:54,050 INFO     [mqttwarn.core            ] Invoking service plugin for `telegram'
+2021-05-30 20:12:54,050 DEBUG    [mqttwarn.services.telegram] *** MODULE=/home/tandalos/.local/lib/python3.8/site-packages/mqttwarn/services/telegram.py: service=telegram, target=j01
+2021-05-30 20:12:54,050 DEBUG    [mqttwarn.services.telegram] Setting chatid directly to '1577603920'
+2021-05-30 20:12:54,050 DEBUG    [mqttwarn.services.telegram] Trying to /sendMessage: https://api.telegram.org/bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage
+2021-05-30 20:12:54,050 DEBUG    [mqttwarn.services.telegram] post params: {'chat_id': 1577603920, 'text': 'hello', 'parse_mode': 'Markdown', 'disable_notification': False}
+2021-05-30 20:12:54,051 DEBUG    [urllib3.connectionpool   ] Starting new HTTPS connection (1): api.telegram.org:443
+2021-05-30 20:12:54,328 DEBUG    [urllib3.connectionpool   ] https://api.telegram.org:443 "POST /bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage?chat_id=1577603920&text=hello&parse_mode=Markdown&disable_notification=False HTTP/1.1" 200 267
+2021-05-30 20:12:54,329 DEBUG    [mqttwarn.services.telegram] Telegram reply: {'ok': True, 'result': {'message_id': 8, 'from': {'id': 1848791128, 'is_bot': True, 'first_name': 'Tandalos', 'username': 'Tandalos_bot'}, 'chat': {'id': 1577603920, 'first_name': 'Tandalos', 'last_name': 'Dunno', 'username': 'tandalos', 'type': 'private'}, 'date': 1622394774, 'text': 'hello'}}
+2021-05-30 20:12:54,329 DEBUG    [mqttwarn.core            ] Job queue has 0 items to process
+2021-05-30 20:28:02,001 DEBUG    [mqttwarn.core            ] Message received on test/1: hello
+2021-05-30 20:28:02,001 DEBUG    [mqttwarn.core            ] Section [test/+] matches message on test/1. Processing...
+2021-05-30 20:28:02,001 DEBUG    [mqttwarn.core            ] Cannot decode JSON object, payload=hello: Expecting value: line 1 column 1 (char 0)
+2021-05-30 20:28:02,001 DEBUG    [mqttwarn.core            ] Message on test/1 going to telegram:j01
+2021-05-30 20:28:02,001 DEBUG    [mqttwarn.core            ] New `telegram:j01' job: test/1
+2021-05-30 20:28:02,001 DEBUG    [mqttwarn.core            ] Processor #0 is handling: `telegram' for j01
+2021-05-30 20:28:02,002 INFO     [mqttwarn.core            ] Invoking service plugin for `telegram'
+2021-05-30 20:28:02,002 DEBUG    [mqttwarn.services.telegram] *** MODULE=/home/tandalos/.local/lib/python3.8/site-packages/mqttwarn/services/telegram.py: service=telegram, target=j01
+2021-05-30 20:28:02,002 DEBUG    [mqttwarn.services.telegram] Setting chatid directly to '1577603920'
+2021-05-30 20:28:02,002 DEBUG    [mqttwarn.services.telegram] Trying to /sendMessage: https://api.telegram.org/bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage
+2021-05-30 20:28:02,002 DEBUG    [mqttwarn.services.telegram] post params: {'chat_id': 1577603920, 'text': 'hello', 'parse_mode': 'Markdown', 'disable_notification': False}
+2021-05-30 20:28:02,003 DEBUG    [urllib3.connectionpool   ] Starting new HTTPS connection (1): api.telegram.org:443
+2021-05-30 20:28:02,279 DEBUG    [urllib3.connectionpool   ] https://api.telegram.org:443 "POST /bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage?chat_id=1577603920&text=hello&parse_mode=Markdown&disable_notification=False HTTP/1.1" 200 267
+2021-05-30 20:28:02,280 DEBUG    [mqttwarn.services.telegram] Telegram reply: {'ok': True, 'result': {'message_id': 9, 'from': {'id': 1848791128, 'is_bot': True, 'first_name': 'Tandalos', 'username': 'Tandalos_bot'}, 'chat': {'id': 1577603920, 'first_name': 'Tandalos', 'last_name': 'Dunno', 'username': 'tandalos', 'type': 'private'}, 'date': 1622395682, 'text': 'hello'}}
+2021-05-30 20:28:02,280 DEBUG    [mqttwarn.core            ] Job queue has 0 items to process
+2021-05-30 20:29:44,193 DEBUG    [mqttwarn.core            ] Message received on test/1: hello
+2021-05-30 20:29:44,193 DEBUG    [mqttwarn.core            ] Section [test/+] matches message on test/1. Processing...
+2021-05-30 20:29:44,193 DEBUG    [mqttwarn.core            ] Cannot decode JSON object, payload=hello: Expecting value: line 1 column 1 (char 0)
+2021-05-30 20:29:44,193 DEBUG    [mqttwarn.core            ] Message on test/1 going to telegram:j01
+2021-05-30 20:29:44,193 DEBUG    [mqttwarn.core            ] New `telegram:j01' job: test/1
+2021-05-30 20:29:44,193 DEBUG    [mqttwarn.core            ] Processor #0 is handling: `telegram' for j01
+2021-05-30 20:29:44,193 INFO     [mqttwarn.core            ] Invoking service plugin for `telegram'
+2021-05-30 20:29:44,193 DEBUG    [mqttwarn.services.telegram] *** MODULE=/home/tandalos/.local/lib/python3.8/site-packages/mqttwarn/services/telegram.py: service=telegram, target=j01
+2021-05-30 20:29:44,193 DEBUG    [mqttwarn.services.telegram] Setting chatid directly to '1577603920'
+2021-05-30 20:29:44,193 DEBUG    [mqttwarn.services.telegram] Trying to /sendMessage: https://api.telegram.org/bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage
+2021-05-30 20:29:44,193 DEBUG    [mqttwarn.services.telegram] post params: {'chat_id': 1577603920, 'text': 'hello', 'parse_mode': 'Markdown', 'disable_notification': False}
+2021-05-30 20:29:44,194 DEBUG    [urllib3.connectionpool   ] Starting new HTTPS connection (1): api.telegram.org:443
+2021-05-30 20:29:44,424 DEBUG    [urllib3.connectionpool   ] https://api.telegram.org:443 "POST /bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage?chat_id=1577603920&text=hello&parse_mode=Markdown&disable_notification=False HTTP/1.1" 200 268
+2021-05-30 20:29:44,425 DEBUG    [mqttwarn.services.telegram] Telegram reply: {'ok': True, 'result': {'message_id': 10, 'from': {'id': 1848791128, 'is_bot': True, 'first_name': 'Tandalos', 'username': 'Tandalos_bot'}, 'chat': {'id': 1577603920, 'first_name': 'Tandalos', 'last_name': 'Dunno', 'username': 'tandalos', 'type': 'private'}, 'date': 1622395784, 'text': 'hello'}}
+2021-05-30 20:29:44,425 DEBUG    [mqttwarn.core            ] Job queue has 0 items to process
+2021-05-30 20:30:23,585 DEBUG    [mqttwarn.core            ] Message received on test/1: hello123
+2021-05-30 20:30:23,585 DEBUG    [mqttwarn.core            ] Section [test/+] matches message on test/1. Processing...
+2021-05-30 20:30:23,585 DEBUG    [mqttwarn.core            ] Cannot decode JSON object, payload=hello123: Expecting value: line 1 column 1 (char 0)
+2021-05-30 20:30:23,585 DEBUG    [mqttwarn.core            ] Message on test/1 going to telegram:j01
+2021-05-30 20:30:23,585 DEBUG    [mqttwarn.core            ] New `telegram:j01' job: test/1
+2021-05-30 20:30:23,585 DEBUG    [mqttwarn.core            ] Processor #0 is handling: `telegram' for j01
+2021-05-30 20:30:23,585 INFO     [mqttwarn.core            ] Invoking service plugin for `telegram'
+2021-05-30 20:30:23,585 DEBUG    [mqttwarn.services.telegram] *** MODULE=/home/tandalos/.local/lib/python3.8/site-packages/mqttwarn/services/telegram.py: service=telegram, target=j01
+2021-05-30 20:30:23,585 DEBUG    [mqttwarn.services.telegram] Setting chatid directly to '1577603920'
+2021-05-30 20:30:23,585 DEBUG    [mqttwarn.services.telegram] Trying to /sendMessage: https://api.telegram.org/bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage
+2021-05-30 20:30:23,585 DEBUG    [mqttwarn.services.telegram] post params: {'chat_id': 1577603920, 'text': 'hello123', 'parse_mode': 'Markdown', 'disable_notification': False}
+2021-05-30 20:30:23,586 DEBUG    [urllib3.connectionpool   ] Starting new HTTPS connection (1): api.telegram.org:443
+2021-05-30 20:30:23,817 DEBUG    [urllib3.connectionpool   ] https://api.telegram.org:443 "POST /bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage?chat_id=1577603920&text=hello123&parse_mode=Markdown&disable_notification=False HTTP/1.1" 200 271
+2021-05-30 20:30:23,818 DEBUG    [mqttwarn.services.telegram] Telegram reply: {'ok': True, 'result': {'message_id': 11, 'from': {'id': 1848791128, 'is_bot': True, 'first_name': 'Tandalos', 'username': 'Tandalos_bot'}, 'chat': {'id': 1577603920, 'first_name': 'Tandalos', 'last_name': 'Dunno', 'username': 'tandalos', 'type': 'private'}, 'date': 1622395823, 'text': 'hello123'}}
+2021-05-30 20:30:23,818 DEBUG    [mqttwarn.core            ] Job queue has 0 items to process
+2021-05-30 20:32:09,632 DEBUG    [mqttwarn.core            ] Message received on test/1: hello 123
+2021-05-30 20:32:09,632 DEBUG    [mqttwarn.core            ] Section [test/+] matches message on test/1. Processing...
+2021-05-30 20:32:09,632 DEBUG    [mqttwarn.core            ] Cannot decode JSON object, payload=hello 123: Expecting value: line 1 column 1 (char 0)
+2021-05-30 20:32:09,632 DEBUG    [mqttwarn.core            ] Message on test/1 going to telegram:j01
+2021-05-30 20:32:09,632 DEBUG    [mqttwarn.core            ] New `telegram:j01' job: test/1
+2021-05-30 20:32:09,632 DEBUG    [mqttwarn.core            ] Processor #0 is handling: `telegram' for j01
+2021-05-30 20:32:09,633 INFO     [mqttwarn.core            ] Invoking service plugin for `telegram'
+2021-05-30 20:32:09,633 DEBUG    [mqttwarn.services.telegram] *** MODULE=/home/tandalos/.local/lib/python3.8/site-packages/mqttwarn/services/telegram.py: service=telegram, target=j01
+2021-05-30 20:32:09,633 DEBUG    [mqttwarn.services.telegram] Setting chatid directly to '1577603920'
+2021-05-30 20:32:09,633 DEBUG    [mqttwarn.services.telegram] Trying to /sendMessage: https://api.telegram.org/bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage
+2021-05-30 20:32:09,633 DEBUG    [mqttwarn.services.telegram] post params: {'chat_id': 1577603920, 'text': 'hello 123', 'parse_mode': 'Markdown', 'disable_notification': False}
+2021-05-30 20:32:09,634 DEBUG    [urllib3.connectionpool   ] Starting new HTTPS connection (1): api.telegram.org:443
+2021-05-30 20:32:09,937 DEBUG    [urllib3.connectionpool   ] https://api.telegram.org:443 "POST /bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage?chat_id=1577603920&text=hello+123&parse_mode=Markdown&disable_notification=False HTTP/1.1" 200 272
+2021-05-30 20:32:09,938 DEBUG    [mqttwarn.services.telegram] Telegram reply: {'ok': True, 'result': {'message_id': 12, 'from': {'id': 1848791128, 'is_bot': True, 'first_name': 'Tandalos', 'username': 'Tandalos_bot'}, 'chat': {'id': 1577603920, 'first_name': 'Tandalos', 'last_name': 'Dunno', 'username': 'tandalos', 'type': 'private'}, 'date': 1622395929, 'text': 'hello 123'}}
+2021-05-30 20:32:09,938 DEBUG    [mqttwarn.core            ] Job queue has 0 items to process
+2021-05-30 20:39:27,992 DEBUG    [mqttwarn.core            ] Message received on test/1: hello 123
+2021-05-30 20:39:27,992 DEBUG    [mqttwarn.core            ] Section [test/+] matches message on test/1. Processing...
+2021-05-30 20:39:27,992 DEBUG    [mqttwarn.core            ] Cannot decode JSON object, payload=hello 123: Expecting value: line 1 column 1 (char 0)
+2021-05-30 20:39:27,992 DEBUG    [mqttwarn.core            ] Message on test/1 going to telegram:j01
+2021-05-30 20:39:27,992 DEBUG    [mqttwarn.core            ] New `telegram:j01' job: test/1
+2021-05-30 20:39:27,992 DEBUG    [mqttwarn.core            ] Processor #0 is handling: `telegram' for j01
+2021-05-30 20:39:27,992 INFO     [mqttwarn.core            ] Invoking service plugin for `telegram'
+2021-05-30 20:39:27,992 DEBUG    [mqttwarn.services.telegram] *** MODULE=/home/tandalos/.local/lib/python3.8/site-packages/mqttwarn/services/telegram.py: service=telegram, target=j01
+2021-05-30 20:39:27,993 DEBUG    [mqttwarn.services.telegram] Setting chatid directly to '1577603920'
+2021-05-30 20:39:27,993 DEBUG    [mqttwarn.services.telegram] Trying to /sendMessage: https://api.telegram.org/bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage
+2021-05-30 20:39:27,993 DEBUG    [mqttwarn.services.telegram] post params: {'chat_id': 1577603920, 'text': 'hello 123', 'parse_mode': 'Markdown', 'disable_notification': False}
+2021-05-30 20:39:27,994 DEBUG    [urllib3.connectionpool   ] Starting new HTTPS connection (1): api.telegram.org:443
+2021-05-30 20:39:28,397 DEBUG    [urllib3.connectionpool   ] https://api.telegram.org:443 "POST /bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage?chat_id=1577603920&text=hello+123&parse_mode=Markdown&disable_notification=False HTTP/1.1" 200 272
+2021-05-30 20:39:28,398 DEBUG    [mqttwarn.services.telegram] Telegram reply: {'ok': True, 'result': {'message_id': 13, 'from': {'id': 1848791128, 'is_bot': True, 'first_name': 'Tandalos', 'username': 'Tandalos_bot'}, 'chat': {'id': 1577603920, 'first_name': 'Tandalos', 'last_name': 'Dunno', 'username': 'tandalos', 'type': 'private'}, 'date': 1622396368, 'text': 'hello 123'}}
+2021-05-30 20:39:28,398 DEBUG    [mqttwarn.core            ] Job queue has 0 items to process
+2021-05-30 20:39:41,800 DEBUG    [mqttwarn.core            ] Message received on test/1: hello 123
+2021-05-30 20:39:41,800 DEBUG    [mqttwarn.core            ] Section [test/+] matches message on test/1. Processing...
+2021-05-30 20:39:41,800 DEBUG    [mqttwarn.core            ] Cannot decode JSON object, payload=hello 123: Expecting value: line 1 column 1 (char 0)
+2021-05-30 20:39:41,800 DEBUG    [mqttwarn.core            ] Message on test/1 going to telegram:j01
+2021-05-30 20:39:41,800 DEBUG    [mqttwarn.core            ] New `telegram:j01' job: test/1
+2021-05-30 20:39:41,800 DEBUG    [mqttwarn.core            ] Processor #0 is handling: `telegram' for j01
+2021-05-30 20:39:41,800 INFO     [mqttwarn.core            ] Invoking service plugin for `telegram'
+2021-05-30 20:39:41,800 DEBUG    [mqttwarn.services.telegram] *** MODULE=/home/tandalos/.local/lib/python3.8/site-packages/mqttwarn/services/telegram.py: service=telegram, target=j01
+2021-05-30 20:39:41,800 DEBUG    [mqttwarn.services.telegram] Setting chatid directly to '1577603920'
+2021-05-30 20:39:41,800 DEBUG    [mqttwarn.services.telegram] Trying to /sendMessage: https://api.telegram.org/bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage
+2021-05-30 20:39:41,800 DEBUG    [mqttwarn.services.telegram] post params: {'chat_id': 1577603920, 'text': 'hello 123', 'parse_mode': 'Markdown', 'disable_notification': False}
+2021-05-30 20:39:41,801 DEBUG    [urllib3.connectionpool   ] Starting new HTTPS connection (1): api.telegram.org:443
+2021-05-30 20:39:42,061 DEBUG    [urllib3.connectionpool   ] https://api.telegram.org:443 "POST /bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage?chat_id=1577603920&text=hello+123&parse_mode=Markdown&disable_notification=False HTTP/1.1" 200 272
+2021-05-30 20:39:42,062 DEBUG    [mqttwarn.services.telegram] Telegram reply: {'ok': True, 'result': {'message_id': 14, 'from': {'id': 1848791128, 'is_bot': True, 'first_name': 'Tandalos', 'username': 'Tandalos_bot'}, 'chat': {'id': 1577603920, 'first_name': 'Tandalos', 'last_name': 'Dunno', 'username': 'tandalos', 'type': 'private'}, 'date': 1622396382, 'text': 'hello 123'}}
+2021-05-30 20:39:42,062 DEBUG    [mqttwarn.core            ] Job queue has 0 items to process
+2021-05-30 20:39:51,030 DEBUG    [mqttwarn.core            ] Message received on test/1: hello 123
+2021-05-30 20:39:51,031 DEBUG    [mqttwarn.core            ] Section [test/+] matches message on test/1. Processing...
+2021-05-30 20:39:51,031 DEBUG    [mqttwarn.core            ] Cannot decode JSON object, payload=hello 123: Expecting value: line 1 column 1 (char 0)
+2021-05-30 20:39:51,031 DEBUG    [mqttwarn.core            ] Message on test/1 going to telegram:j01
+2021-05-30 20:39:51,031 DEBUG    [mqttwarn.core            ] New `telegram:j01' job: test/1
+2021-05-30 20:39:51,031 DEBUG    [mqttwarn.core            ] Processor #0 is handling: `telegram' for j01
+2021-05-30 20:39:51,031 INFO     [mqttwarn.core            ] Invoking service plugin for `telegram'
+2021-05-30 20:39:51,031 DEBUG    [mqttwarn.services.telegram] *** MODULE=/home/tandalos/.local/lib/python3.8/site-packages/mqttwarn/services/telegram.py: service=telegram, target=j01
+2021-05-30 20:39:51,031 DEBUG    [mqttwarn.services.telegram] Setting chatid directly to '1577603920'
+2021-05-30 20:39:51,031 DEBUG    [mqttwarn.services.telegram] Trying to /sendMessage: https://api.telegram.org/bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage
+2021-05-30 20:39:51,031 DEBUG    [mqttwarn.services.telegram] post params: {'chat_id': 1577603920, 'text': 'hello 123', 'parse_mode': 'Markdown', 'disable_notification': False}
+2021-05-30 20:39:51,032 DEBUG    [urllib3.connectionpool   ] Starting new HTTPS connection (1): api.telegram.org:443
+2021-05-30 20:39:51,332 DEBUG    [urllib3.connectionpool   ] https://api.telegram.org:443 "POST /bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage?chat_id=1577603920&text=hello+123&parse_mode=Markdown&disable_notification=False HTTP/1.1" 200 272
+2021-05-30 20:39:51,333 DEBUG    [mqttwarn.services.telegram] Telegram reply: {'ok': True, 'result': {'message_id': 15, 'from': {'id': 1848791128, 'is_bot': True, 'first_name': 'Tandalos', 'username': 'Tandalos_bot'}, 'chat': {'id': 1577603920, 'first_name': 'Tandalos', 'last_name': 'Dunno', 'username': 'tandalos', 'type': 'private'}, 'date': 1622396391, 'text': 'hello 123'}}
+2021-05-30 20:39:51,333 DEBUG    [mqttwarn.core            ] Job queue has 0 items to process
+2021-05-30 20:40:02,647 DEBUG    [mqttwarn.core            ] Message received on test/1: hello 123
+2021-05-30 20:40:02,647 DEBUG    [mqttwarn.core            ] Section [test/+] matches message on test/1. Processing...
+2021-05-30 20:40:02,647 DEBUG    [mqttwarn.core            ] Cannot decode JSON object, payload=hello 123: Expecting value: line 1 column 1 (char 0)
+2021-05-30 20:40:02,647 DEBUG    [mqttwarn.core            ] Message on test/1 going to telegram:j01
+2021-05-30 20:40:02,647 DEBUG    [mqttwarn.core            ] New `telegram:j01' job: test/1
+2021-05-30 20:40:02,647 DEBUG    [mqttwarn.core            ] Processor #0 is handling: `telegram' for j01
+2021-05-30 20:40:02,647 INFO     [mqttwarn.core            ] Invoking service plugin for `telegram'
+2021-05-30 20:40:02,647 DEBUG    [mqttwarn.services.telegram] *** MODULE=/home/tandalos/.local/lib/python3.8/site-packages/mqttwarn/services/telegram.py: service=telegram, target=j01
+2021-05-30 20:40:02,648 DEBUG    [mqttwarn.services.telegram] Setting chatid directly to '1577603920'
+2021-05-30 20:40:02,648 DEBUG    [mqttwarn.services.telegram] Trying to /sendMessage: https://api.telegram.org/bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage
+2021-05-30 20:40:02,648 DEBUG    [mqttwarn.services.telegram] post params: {'chat_id': 1577603920, 'text': 'hello 123', 'parse_mode': 'Markdown', 'disable_notification': False}
+2021-05-30 20:40:02,648 DEBUG    [urllib3.connectionpool   ] Starting new HTTPS connection (1): api.telegram.org:443
+2021-05-30 20:40:02,919 DEBUG    [urllib3.connectionpool   ] https://api.telegram.org:443 "POST /bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage?chat_id=1577603920&text=hello+123&parse_mode=Markdown&disable_notification=False HTTP/1.1" 200 272
+2021-05-30 20:40:02,920 DEBUG    [mqttwarn.services.telegram] Telegram reply: {'ok': True, 'result': {'message_id': 16, 'from': {'id': 1848791128, 'is_bot': True, 'first_name': 'Tandalos', 'username': 'Tandalos_bot'}, 'chat': {'id': 1577603920, 'first_name': 'Tandalos', 'last_name': 'Dunno', 'username': 'tandalos', 'type': 'private'}, 'date': 1622396402, 'text': 'hello 123'}}
+2021-05-30 20:40:02,920 DEBUG    [mqttwarn.core            ] Job queue has 0 items to process
+2021-05-30 20:48:31,550 DEBUG    [mqttwarn.core            ] Message received on test/1: file: file.txt has changed
+2021-05-30 20:48:31,550 DEBUG    [mqttwarn.core            ] Section [test/+] matches message on test/1. Processing...
+2021-05-30 20:48:31,550 DEBUG    [mqttwarn.core            ] Cannot decode JSON object, payload=file: file.txt has changed: Expecting value: line 1 column 1 (char 0)
+2021-05-30 20:48:31,550 DEBUG    [mqttwarn.core            ] Message on test/1 going to telegram:j01
+2021-05-30 20:48:31,550 DEBUG    [mqttwarn.core            ] New `telegram:j01' job: test/1
+2021-05-30 20:48:31,550 DEBUG    [mqttwarn.core            ] Processor #0 is handling: `telegram' for j01
+2021-05-30 20:48:31,550 INFO     [mqttwarn.core            ] Invoking service plugin for `telegram'
+2021-05-30 20:48:31,550 DEBUG    [mqttwarn.services.telegram] *** MODULE=/home/tandalos/.local/lib/python3.8/site-packages/mqttwarn/services/telegram.py: service=telegram, target=j01
+2021-05-30 20:48:31,550 DEBUG    [mqttwarn.services.telegram] Setting chatid directly to '1577603920'
+2021-05-30 20:48:31,551 DEBUG    [mqttwarn.services.telegram] Trying to /sendMessage: https://api.telegram.org/bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage
+2021-05-30 20:48:31,551 DEBUG    [mqttwarn.services.telegram] post params: {'chat_id': 1577603920, 'text': 'file: file.txt has changed', 'parse_mode': 'Markdown', 'disable_notification': False}
+2021-05-30 20:48:31,551 DEBUG    [urllib3.connectionpool   ] Starting new HTTPS connection (1): api.telegram.org:443
+2021-05-30 20:48:31,838 DEBUG    [urllib3.connectionpool   ] https://api.telegram.org:443 "POST /bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage?chat_id=1577603920&text=file%3A+file.txt+has+changed&parse_mode=Markdown&disable_notification=False HTTP/1.1" 200 289
+2021-05-30 20:48:31,839 DEBUG    [mqttwarn.services.telegram] Telegram reply: {'ok': True, 'result': {'message_id': 17, 'from': {'id': 1848791128, 'is_bot': True, 'first_name': 'Tandalos', 'username': 'Tandalos_bot'}, 'chat': {'id': 1577603920, 'first_name': 'Tandalos', 'last_name': 'Dunno', 'username': 'tandalos', 'type': 'private'}, 'date': 1622396911, 'text': 'file: file.txt has changed'}}
+2021-05-30 20:48:31,839 DEBUG    [mqttwarn.core            ] Job queue has 0 items to process
+2021-05-30 20:50:38,405 DEBUG    [mqttwarn.core            ] Message received on test/1: file: file.txt has changed
+2021-05-30 20:50:38,405 DEBUG    [mqttwarn.core            ] Section [test/+] matches message on test/1. Processing...
+2021-05-30 20:50:38,405 DEBUG    [mqttwarn.core            ] Cannot decode JSON object, payload=file: file.txt has changed: Expecting value: line 1 column 1 (char 0)
+2021-05-30 20:50:38,406 DEBUG    [mqttwarn.core            ] Message on test/1 going to telegram:j01
+2021-05-30 20:50:38,406 DEBUG    [mqttwarn.core            ] New `telegram:j01' job: test/1
+2021-05-30 20:50:38,406 DEBUG    [mqttwarn.core            ] Processor #0 is handling: `telegram' for j01
+2021-05-30 20:50:38,406 INFO     [mqttwarn.core            ] Invoking service plugin for `telegram'
+2021-05-30 20:50:38,406 DEBUG    [mqttwarn.services.telegram] *** MODULE=/home/tandalos/.local/lib/python3.8/site-packages/mqttwarn/services/telegram.py: service=telegram, target=j01
+2021-05-30 20:50:38,406 DEBUG    [mqttwarn.services.telegram] Setting chatid directly to '1577603920'
+2021-05-30 20:50:38,406 DEBUG    [mqttwarn.services.telegram] Trying to /sendMessage: https://api.telegram.org/bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage
+2021-05-30 20:50:38,406 DEBUG    [mqttwarn.services.telegram] post params: {'chat_id': 1577603920, 'text': 'file: file.txt has changed', 'parse_mode': 'Markdown', 'disable_notification': False}
+2021-05-30 20:50:38,407 DEBUG    [urllib3.connectionpool   ] Starting new HTTPS connection (1): api.telegram.org:443
+2021-05-30 20:50:38,637 DEBUG    [urllib3.connectionpool   ] https://api.telegram.org:443 "POST /bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage?chat_id=1577603920&text=file%3A+file.txt+has+changed&parse_mode=Markdown&disable_notification=False HTTP/1.1" 200 289
+2021-05-30 20:50:38,638 DEBUG    [mqttwarn.services.telegram] Telegram reply: {'ok': True, 'result': {'message_id': 18, 'from': {'id': 1848791128, 'is_bot': True, 'first_name': 'Tandalos', 'username': 'Tandalos_bot'}, 'chat': {'id': 1577603920, 'first_name': 'Tandalos', 'last_name': 'Dunno', 'username': 'tandalos', 'type': 'private'}, 'date': 1622397038, 'text': 'file: file.txt has changed'}}
+2021-05-30 20:50:38,638 DEBUG    [mqttwarn.core            ] Job queue has 0 items to process
+2021-05-30 20:50:53,434 DEBUG    [mqttwarn.core            ] Message received on test/1: file: file.txt has changed
+2021-05-30 20:50:53,435 DEBUG    [mqttwarn.core            ] Section [test/+] matches message on test/1. Processing...
+2021-05-30 20:50:53,435 DEBUG    [mqttwarn.core            ] Cannot decode JSON object, payload=file: file.txt has changed: Expecting value: line 1 column 1 (char 0)
+2021-05-30 20:50:53,435 DEBUG    [mqttwarn.core            ] Message on test/1 going to telegram:j01
+2021-05-30 20:50:53,435 DEBUG    [mqttwarn.core            ] New `telegram:j01' job: test/1
+2021-05-30 20:50:53,435 DEBUG    [mqttwarn.core            ] Processor #0 is handling: `telegram' for j01
+2021-05-30 20:50:53,435 INFO     [mqttwarn.core            ] Invoking service plugin for `telegram'
+2021-05-30 20:50:53,435 DEBUG    [mqttwarn.services.telegram] *** MODULE=/home/tandalos/.local/lib/python3.8/site-packages/mqttwarn/services/telegram.py: service=telegram, target=j01
+2021-05-30 20:50:53,435 DEBUG    [mqttwarn.services.telegram] Setting chatid directly to '1577603920'
+2021-05-30 20:50:53,435 DEBUG    [mqttwarn.services.telegram] Trying to /sendMessage: https://api.telegram.org/bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage
+2021-05-30 20:50:53,435 DEBUG    [mqttwarn.services.telegram] post params: {'chat_id': 1577603920, 'text': 'file: file.txt has changed', 'parse_mode': 'Markdown', 'disable_notification': False}
+2021-05-30 20:50:53,436 DEBUG    [urllib3.connectionpool   ] Starting new HTTPS connection (1): api.telegram.org:443
+2021-05-30 20:50:53,906 DEBUG    [urllib3.connectionpool   ] https://api.telegram.org:443 "POST /bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage?chat_id=1577603920&text=file%3A+file.txt+has+changed&parse_mode=Markdown&disable_notification=False HTTP/1.1" 200 289
+2021-05-30 20:50:53,907 DEBUG    [mqttwarn.services.telegram] Telegram reply: {'ok': True, 'result': {'message_id': 19, 'from': {'id': 1848791128, 'is_bot': True, 'first_name': 'Tandalos', 'username': 'Tandalos_bot'}, 'chat': {'id': 1577603920, 'first_name': 'Tandalos', 'last_name': 'Dunno', 'username': 'tandalos', 'type': 'private'}, 'date': 1622397053, 'text': 'file: file.txt has changed'}}
+2021-05-30 20:50:53,908 DEBUG    [mqttwarn.core            ] Job queue has 0 items to process
+2021-05-30 20:51:03,442 DEBUG    [mqttwarn.core            ] Message received on test/1: file: file.txt has changed
+2021-05-30 20:51:03,442 DEBUG    [mqttwarn.core            ] Section [test/+] matches message on test/1. Processing...
+2021-05-30 20:51:03,442 DEBUG    [mqttwarn.core            ] Cannot decode JSON object, payload=file: file.txt has changed: Expecting value: line 1 column 1 (char 0)
+2021-05-30 20:51:03,442 DEBUG    [mqttwarn.core            ] Message on test/1 going to telegram:j01
+2021-05-30 20:51:03,442 DEBUG    [mqttwarn.core            ] New `telegram:j01' job: test/1
+2021-05-30 20:51:03,442 DEBUG    [mqttwarn.core            ] Processor #0 is handling: `telegram' for j01
+2021-05-30 20:51:03,443 INFO     [mqttwarn.core            ] Invoking service plugin for `telegram'
+2021-05-30 20:51:03,443 DEBUG    [mqttwarn.services.telegram] *** MODULE=/home/tandalos/.local/lib/python3.8/site-packages/mqttwarn/services/telegram.py: service=telegram, target=j01
+2021-05-30 20:51:03,443 DEBUG    [mqttwarn.services.telegram] Setting chatid directly to '1577603920'
+2021-05-30 20:51:03,443 DEBUG    [mqttwarn.services.telegram] Trying to /sendMessage: https://api.telegram.org/bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage
+2021-05-30 20:51:03,443 DEBUG    [mqttwarn.services.telegram] post params: {'chat_id': 1577603920, 'text': 'file: file.txt has changed', 'parse_mode': 'Markdown', 'disable_notification': False}
+2021-05-30 20:51:03,444 DEBUG    [urllib3.connectionpool   ] Starting new HTTPS connection (1): api.telegram.org:443
+2021-05-30 20:51:05,347 DEBUG    [urllib3.connectionpool   ] https://api.telegram.org:443 "POST /bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage?chat_id=1577603920&text=file%3A+file.txt+has+changed&parse_mode=Markdown&disable_notification=False HTTP/1.1" 200 289
+2021-05-30 20:51:05,348 DEBUG    [mqttwarn.services.telegram] Telegram reply: {'ok': True, 'result': {'message_id': 20, 'from': {'id': 1848791128, 'is_bot': True, 'first_name': 'Tandalos', 'username': 'Tandalos_bot'}, 'chat': {'id': 1577603920, 'first_name': 'Tandalos', 'last_name': 'Dunno', 'username': 'tandalos', 'type': 'private'}, 'date': 1622397064, 'text': 'file: file.txt has changed'}}
+2021-05-30 20:51:05,348 DEBUG    [mqttwarn.core            ] Job queue has 0 items to process
+2021-05-30 20:51:28,318 DEBUG    [mqttwarn.core            ] Disconnecting from MQTT broker...
+2021-05-30 20:51:28,319 INFO     [mqttwarn.core            ] Clean disconnection from broker
+2021-05-30 20:51:28,319 INFO     [mqttwarn.core            ] Waiting for queue to drain
+2021-05-30 20:51:28,319 DEBUG    [mqttwarn.core            ] Exiting on signal 2
+2021-05-30 20:53:44,891 INFO     [mqttwarn.commands        ] Starting mqttwarn
+2021-05-30 20:53:44,892 INFO     [mqttwarn.commands        ] Log level is DEBUG
+2021-05-30 20:53:44,892 INFO     [mqttwarn.core            ] Successfully loaded service "telegram"
+2021-05-30 20:53:44,892 DEBUG    [mqttwarn.core            ] Attempting connection to MQTT broker localhost:1883...
+2021-05-30 20:53:44,892 DEBUG    [mqttwarn.core            ] Setting LWT to clients/mqttwarn...
+2021-05-30 20:53:44,892 INFO     [mqttwarn.core            ] Starting 1 worker threads
+2021-05-30 20:53:44,893 DEBUG    [mqttwarn.core            ] Job queue has 0 items to process
+2021-05-30 20:53:44,893 DEBUG    [mqttwarn.core            ] Connected to MQTT broker, subscribing to topics...
+2021-05-30 20:53:44,893 DEBUG    [mqttwarn.core            ] Subscribing to test/+ (qos=0)
+2021-05-30 20:54:07,950 INFO     [mqttwarn.commands        ] Starting mqttwarn
+2021-05-30 20:54:07,950 INFO     [mqttwarn.commands        ] Log level is DEBUG
+2021-05-30 20:54:07,951 INFO     [mqttwarn.core            ] Successfully loaded service "telegram"
+2021-05-30 20:54:07,951 DEBUG    [mqttwarn.core            ] Attempting connection to MQTT broker localhost:1883...
+2021-05-30 20:54:07,951 DEBUG    [mqttwarn.core            ] Setting LWT to clients/mqttwarn...
+2021-05-30 20:54:07,951 INFO     [mqttwarn.core            ] Starting 1 worker threads
+2021-05-30 20:54:07,952 DEBUG    [mqttwarn.core            ] Job queue has 0 items to process
+2021-05-30 20:54:07,952 DEBUG    [mqttwarn.core            ] Connected to MQTT broker, subscribing to topics...
+2021-05-30 20:54:07,952 DEBUG    [mqttwarn.core            ] Subscribing to test/+ (qos=0)
+2021-05-30 20:54:17,280 INFO     [mqttwarn.commands        ] Starting mqttwarn
+2021-05-30 20:54:17,280 INFO     [mqttwarn.commands        ] Log level is DEBUG
+2021-05-30 20:54:17,281 INFO     [mqttwarn.core            ] Successfully loaded service "telegram"
+2021-05-30 20:54:17,281 DEBUG    [mqttwarn.core            ] Attempting connection to MQTT broker localhost:1883...
+2021-05-30 20:54:17,281 DEBUG    [mqttwarn.core            ] Setting LWT to clients/mqttwarn...
+2021-05-30 20:54:17,281 INFO     [mqttwarn.core            ] Starting 1 worker threads
+2021-05-30 20:54:17,281 DEBUG    [mqttwarn.core            ] Job queue has 0 items to process
+2021-05-30 20:54:17,282 DEBUG    [mqttwarn.core            ] Connected to MQTT broker, subscribing to topics...
+2021-05-30 20:54:17,282 DEBUG    [mqttwarn.core            ] Subscribing to test/+ (qos=0)
+2021-05-30 20:55:50,477 DEBUG    [mqttwarn.core            ] Disconnecting from MQTT broker...
+2021-05-30 20:55:50,478 INFO     [mqttwarn.core            ] Clean disconnection from broker
+2021-05-30 20:55:50,478 INFO     [mqttwarn.core            ] Waiting for queue to drain
+2021-05-30 20:55:50,478 DEBUG    [mqttwarn.core            ] Exiting on signal 2
+2021-05-30 20:59:43,443 INFO     [mqttwarn.commands        ] Starting mqttwarn
+2021-05-30 20:59:43,443 INFO     [mqttwarn.commands        ] Log level is DEBUG
+2021-05-30 20:59:43,443 INFO     [mqttwarn.core            ] Successfully loaded service "telegram"
+2021-05-30 20:59:43,443 DEBUG    [mqttwarn.core            ] Attempting connection to MQTT broker localhost:1883...
+2021-05-30 20:59:43,443 DEBUG    [mqttwarn.core            ] Setting LWT to clients/mqttwarn...
+2021-05-30 20:59:43,444 INFO     [mqttwarn.core            ] Starting 1 worker threads
+2021-05-30 20:59:43,444 DEBUG    [mqttwarn.core            ] Job queue has 0 items to process
+2021-05-30 20:59:43,444 DEBUG    [mqttwarn.core            ] Connected to MQTT broker, subscribing to topics...
+2021-05-30 20:59:43,444 DEBUG    [mqttwarn.core            ] Subscribing to test/+ (qos=0)
+2021-05-30 21:00:00,514 DEBUG    [mqttwarn.core            ] Message received on test/1: file: file.txt has changed
+2021-05-30 21:00:00,514 DEBUG    [mqttwarn.core            ] Section [test/+] matches message on test/1. Processing...
+2021-05-30 21:00:00,514 DEBUG    [mqttwarn.core            ] Cannot decode JSON object, payload=file: file.txt has changed: Expecting value: line 1 column 1 (char 0)
+2021-05-30 21:00:00,515 DEBUG    [mqttwarn.core            ] Message on test/1 going to telegram:j01
+2021-05-30 21:00:00,515 DEBUG    [mqttwarn.core            ] New `telegram:j01' job: test/1
+2021-05-30 21:00:00,515 DEBUG    [mqttwarn.core            ] Processor #0 is handling: `telegram' for j01
+2021-05-30 21:00:00,515 INFO     [mqttwarn.core            ] Invoking service plugin for `telegram'
+2021-05-30 21:00:00,515 DEBUG    [mqttwarn.services.telegram] *** MODULE=/home/tandalos/.local/lib/python3.8/site-packages/mqttwarn/services/telegram.py: service=telegram, target=j01
+2021-05-30 21:00:00,515 DEBUG    [mqttwarn.services.telegram] Setting chatid directly to '1577603920'
+2021-05-30 21:00:00,515 DEBUG    [mqttwarn.services.telegram] Trying to /sendMessage: https://api.telegram.org/bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage
+2021-05-30 21:00:00,515 DEBUG    [mqttwarn.services.telegram] post params: {'chat_id': 1577603920, 'text': 'file: file.txt has changed', 'parse_mode': 'Markdown', 'disable_notification': False}
+2021-05-30 21:00:00,517 DEBUG    [urllib3.connectionpool   ] Starting new HTTPS connection (1): api.telegram.org:443
+2021-05-30 21:00:00,835 DEBUG    [urllib3.connectionpool   ] https://api.telegram.org:443 "POST /bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage?chat_id=1577603920&text=file%3A+file.txt+has+changed&parse_mode=Markdown&disable_notification=False HTTP/1.1" 200 289
+2021-05-30 21:00:00,836 DEBUG    [mqttwarn.services.telegram] Telegram reply: {'ok': True, 'result': {'message_id': 21, 'from': {'id': 1848791128, 'is_bot': True, 'first_name': 'Tandalos', 'username': 'Tandalos_bot'}, 'chat': {'id': 1577603920, 'first_name': 'Tandalos', 'last_name': 'Dunno', 'username': 'tandalos', 'type': 'private'}, 'date': 1622397600, 'text': 'file: file.txt has changed'}}
+2021-05-30 21:00:00,836 DEBUG    [mqttwarn.core            ] Job queue has 0 items to process
+2021-05-30 21:00:20,536 DEBUG    [mqttwarn.core            ] Message received on test/1: file: file.txt has changed
+2021-05-30 21:00:20,536 DEBUG    [mqttwarn.core            ] Section [test/+] matches message on test/1. Processing...
+2021-05-30 21:00:20,536 DEBUG    [mqttwarn.core            ] Cannot decode JSON object, payload=file: file.txt has changed: Expecting value: line 1 column 1 (char 0)
+2021-05-30 21:00:20,537 DEBUG    [mqttwarn.core            ] Message on test/1 going to telegram:j01
+2021-05-30 21:00:20,537 DEBUG    [mqttwarn.core            ] New `telegram:j01' job: test/1
+2021-05-30 21:00:20,537 DEBUG    [mqttwarn.core            ] Processor #0 is handling: `telegram' for j01
+2021-05-30 21:00:20,537 INFO     [mqttwarn.core            ] Invoking service plugin for `telegram'
+2021-05-30 21:00:20,537 DEBUG    [mqttwarn.services.telegram] *** MODULE=/home/tandalos/.local/lib/python3.8/site-packages/mqttwarn/services/telegram.py: service=telegram, target=j01
+2021-05-30 21:00:20,537 DEBUG    [mqttwarn.services.telegram] Setting chatid directly to '1577603920'
+2021-05-30 21:00:20,537 DEBUG    [mqttwarn.services.telegram] Trying to /sendMessage: https://api.telegram.org/bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage
+2021-05-30 21:00:20,537 DEBUG    [mqttwarn.services.telegram] post params: {'chat_id': 1577603920, 'text': 'file: file.txt has changed', 'parse_mode': 'Markdown', 'disable_notification': False}
+2021-05-30 21:00:20,538 DEBUG    [urllib3.connectionpool   ] Starting new HTTPS connection (1): api.telegram.org:443
+2021-05-30 21:00:20,766 DEBUG    [urllib3.connectionpool   ] https://api.telegram.org:443 "POST /bot1848791128:AAHoGIBsrrVwDrWw_L9WJ7_ZICutSWv0LFM/sendMessage?chat_id=1577603920&text=file%3A+file.txt+has+changed&parse_mode=Markdown&disable_notification=False HTTP/1.1" 200 289
+2021-05-30 21:00:20,768 DEBUG    [mqttwarn.services.telegram] Telegram reply: {'ok': True, 'result': {'message_id': 22, 'from': {'id': 1848791128, 'is_bot': True, 'first_name': 'Tandalos', 'username': 'Tandalos_bot'}, 'chat': {'id': 1577603920, 'first_name': 'Tandalos', 'last_name': 'Dunno', 'username': 'tandalos', 'type': 'private'}, 'date': 1622397620, 'text': 'file: file.txt has changed'}}
+2021-05-30 21:00:20,768 DEBUG    [mqttwarn.core            ] Job queue has 0 items to process
